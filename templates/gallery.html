@@ -1,0 +1,20 @@
+<html>
+<head>
+</head>
+<body>
+	<h1 id="status">ImgurGallery</h1>
+	<div id="rte" contenteditable="true" style="width: 200px; border: 2px solid #000; overflow: auto; font-size: 20px; margin-bottom: 2px">
+		<strong>CTRL+V Here...</strong>
+	</div>
+	
+	{{ range .Images }}
+		<a href="http://i.imgur.com/{{ .Orig }}" border="0"><img src="http://i.imgur.com/{{ .Thumb }}" /></a>&nbsp;&nbsp;
+	{{end}}
+	
+
+	<script type="text/javascript">
+		var imgurAPIKey = "{{ .ImgurAPIKey }}"
+	</script>
+	<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
